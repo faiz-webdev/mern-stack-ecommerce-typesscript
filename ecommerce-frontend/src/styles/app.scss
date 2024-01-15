@@ -37,6 +37,7 @@ $color3: rgb(0, 104, 136);
 
 @import "home";
 @import "cart";
+@import "shipping";
 
 @import "admin-styles/dashboard";
 @import "admin-styles/products";
@@ -115,32 +116,24 @@ $color3: rgb(0, 104, 136);
     @include square(100%);
     top: 0;
     left: 0;
-    background-color:#0000006b;
+    background-color: #0000006b;
     @include flex;
     button {
-        @include flex;
-        @include square(3rem);
-        border-radius: 100%;
-        border: none;
-        background-color: $color3;
-        cursor: pointer;
-        color: $color1;
-        font-size: 1.1rem;
-        transition: all 0.3s;
-        &:hover {
-            rotate: 20deg;
-        }
-    } 
+      @include flex;
+      @include square(3rem);
+      border-radius: 100%;
+      border: none;
+      background-color: $color3;
+      cursor: pointer;
+      color: $color1;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      &:hover {
+        rotate: 20deg;
+      }
+    }
   }
 }
-
-
-
-
-
-
-
-
 
 // admin css
 .admin-container {
