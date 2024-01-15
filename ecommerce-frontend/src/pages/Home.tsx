@@ -1,9 +1,20 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function Home() {
-  return (
-    <div>Home</div>
-  )
+    return (
+        <div className='home'>
+            <section></section>
+
+
+            <h1>Latest Product
+
+                <Link to="/search" className='findmore'>More</Link>
+            </h1>
+
+            <main></main>
+        </div>
+    )
 }
 
 export default Home
