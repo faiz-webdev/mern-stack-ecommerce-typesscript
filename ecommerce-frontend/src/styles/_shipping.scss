@@ -27,7 +27,7 @@
   > form {
     max-width: 450px;
     width: 100%;
-    @include flex(column, center, strech, 2rem);
+    @include flex(column, center, stretch, 2rem);
     padding: 2rem;
 
     > h1 {
