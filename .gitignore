@@ -8,6 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 ecommerce-frontend/node_modules
+ecommerce-admin-dashboard/node_modules
 dist
 dist-ssr
 *.local
