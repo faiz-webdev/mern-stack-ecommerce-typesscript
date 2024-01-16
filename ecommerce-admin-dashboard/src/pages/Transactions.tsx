@@ -1,8 +1,13 @@
 import React from 'react'
+import AdminSidebar from '../components/AdminSidebar'
 
 const Transactions = () => {
   return (
-    <div>Transactions</div>
+    <div className='adminContainer'>
+      <AdminSidebar />
+      <main>Main</main>
+
+    </div>
   )
 }
 
