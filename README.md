@@ -18,3 +18,6 @@
 
 ## React router dom sass and react-icons
 `npm i react-router-dom sass react-icons`
+
+## Chart
+`npm install --save chart.js react-chartjs-2`
