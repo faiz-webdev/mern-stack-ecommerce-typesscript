@@ -8,6 +8,13 @@ import { BarChart } from '../components/admin/Charts'
 const userImg = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJxA5cTf-5dh5Eusm0puHbvAhOrCRPtckzjA&usqp"
 
 const Dashboard = () => {
+
+    const data: CategoryItemProps[] = [{
+        value: 10,
+        heading: "heading",
+        color: "white",
+    }];
+
     return (
         <div className='adminContainer'>
             <AdminSidebar />
@@ -60,6 +67,21 @@ const Dashboard = () => {
                             bgColor_2="rgba(53, 162, 235, 0.8)"
                         />
                     </div>
+
+                    <div className="dashboard-categories">
+                        <h2>Inventory</h2>
+
+                        <div>
+                            {data.map((i: CategoryItemProps) => (
+                                <CategoryItem
+                                    key={i.heading}
+                                    value={i.value}
+                                    heading={i.heading}
+                                    color={`hsl(${i.value * 4}, ${i.value}%, 50%)`}
+                                />
+                            ))}
+                        </div>
+                    </div>
                 </section>
             </main>
         </div>
@@ -103,5 +125,24 @@ const WidgetItem = ({
         </div>
     </article>
 );
+
+interface CategoryItemProps {
+    color: string;
+    value: number;
+    heading: string;
+}
+
+const CategoryItem = ({ value, color, heading }: CategoryItemProps) => (
+    <div className='category-item'>
+        <h5>{heading}</h5>
+        <div>
+            <div style={{
+                backgroundColor: color,
+                width: `${value}%`
+            }}></div>
+        </div>
+        <span>{value}%</span>
+    </div>
+)
 
 export default Dashboard
