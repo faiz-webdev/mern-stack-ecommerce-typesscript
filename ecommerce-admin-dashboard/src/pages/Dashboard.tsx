@@ -2,8 +2,9 @@ import { BsSearch } from 'react-icons/bs'
 import AdminSidebar from '../components/AdminSidebar'
 import { FaRegBell } from 'react-icons/fa'
 import { HiTrendingDown, HiTrendingUp } from 'react-icons/hi'
-import { BarChart } from '../components/admin/Charts'
+import { BarChart, DoughnutChart } from '../components/admin/Charts'
 import data from "../assets/data.json";
+import { BiMaleFemale } from 'react-icons/bi'
 
 
 const userImg = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJxA5cTf-5dh5Eusm0puHbvAhOrCRPtckzjA&usqp"
@@ -82,8 +83,14 @@ const Dashboard = () => {
 
                 <section className='transaction-container'>
                     <div className='gender-chart'>
-
+                        <h2>Gender Ratio</h2>
+                        <DoughnutChart labels={["Femal", "Male"]}
+                            data={[12, 19]}
+                            backgroundColor={["hsl(340, 82%, 56%)", "rgba(53, 162, 235, 0.8)"]}
+                            cutout={90} />
+                        <p><BiMaleFemale /></p>
                     </div>
+                    {/* table */}
                 </section>
             </main>
         </div>
