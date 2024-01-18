@@ -3,17 +3,12 @@ import AdminSidebar from '../components/AdminSidebar'
 import { FaRegBell } from 'react-icons/fa'
 import { HiTrendingDown, HiTrendingUp } from 'react-icons/hi'
 import { BarChart } from '../components/admin/Charts'
+import data from "../assets/data.json";
 
 
 const userImg = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJxA5cTf-5dh5Eusm0puHbvAhOrCRPtckzjA&usqp"
 
 const Dashboard = () => {
-
-    const data: CategoryItemProps[] = [{
-        value: 10,
-        heading: "heading",
-        color: "white",
-    }];
 
     return (
         <div className='adminContainer'>
@@ -72,7 +67,7 @@ const Dashboard = () => {
                         <h2>Inventory</h2>
 
                         <div>
-                            {data.map((i: CategoryItemProps) => (
+                            {data?.categories?.map((i) => (
                                 <CategoryItem
                                     key={i.heading}
                                     value={i.value}
@@ -80,7 +75,14 @@ const Dashboard = () => {
                                     color={`hsl(${i.value * 4}, ${i.value}%, 50%)`}
                                 />
                             ))}
+
                         </div>
+                    </div>
+                </section>
+
+                <section className='transaction-container'>
+                    <div className='gender-chart'>
+
                     </div>
                 </section>
             </main>
@@ -139,7 +141,8 @@ const CategoryItem = ({ value, color, heading }: CategoryItemProps) => (
             <div style={{
                 backgroundColor: color,
                 width: `${value}%`
-            }}></div>
+            }}
+            ></div>
         </div>
         <span>{value}%</span>
     </div>

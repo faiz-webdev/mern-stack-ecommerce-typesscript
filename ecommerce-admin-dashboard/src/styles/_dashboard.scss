@@ -110,7 +110,7 @@
 
       .category-item {
         width: 100%;
-        @include flex(column, space-between);
+        @include flex(row, space-between);
         padding: 1rem;
         > h5 {
           letter-spacing: 1px;
