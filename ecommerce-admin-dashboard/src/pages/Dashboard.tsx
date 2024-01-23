@@ -5,6 +5,7 @@ import { HiTrendingDown, HiTrendingUp } from 'react-icons/hi'
 import { BarChart, DoughnutChart } from '../components/admin/Charts'
 import data from "../assets/data.json";
 import { BiMaleFemale } from 'react-icons/bi'
+import Table from "../components/DashboardTable";
 
 
 const userImg = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJxA5cTf-5dh5Eusm0puHbvAhOrCRPtckzjA&usqp"
@@ -90,7 +91,7 @@ const Dashboard = () => {
                             cutout={90} />
                         <p><BiMaleFemale /></p>
                     </div>
-                    {/* table */}
+                    <Table data={data.transaction} />
                 </section>
             </main>
         </div>
