@@ -1,4 +1,5 @@
-import { useTable, Column, TableOptions } from "react-table"
+import { AiOutlineSortAscending, AiOutlineSortDescending } from "react-icons/ai";
+import { useTable, Column, TableOptions, useSortBy, usePagination } from "react-table"
 
 function TableHOC<T extends Object>(
     columns: Column<T>[],
@@ -10,11 +11,14 @@ function TableHOC<T extends Object>(
 
         const options: TableOptions<T> = {
             columns,
-            data
+            data,
+            initialState: {
+                pageSize: 6
+            }
         }
 
-        const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow }
-            = useTable(options);
+        const { getTableProps, getTableBodyProps, headerGroups, page, prepareRow }
+            = useTable(options, useSortBy, usePagination);
 
 
 
@@ -27,15 +31,21 @@ function TableHOC<T extends Object>(
                         {headerGroups.map((headerGroup) => (
                             <tr {...headerGroup.getHeaderGroupProps()}>
                                 {headerGroup.headers.map((column) => (
-                                    <th {...column.getHeaderProps()}>
+                                    <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                                         {column.render("Header")}
+                                        {
+                                            column.isSorted && <span> {" "}
+                                                {column.isSortedDesc ?
+                                                    <AiOutlineSortDescending /> : <AiOutlineSortAscending />}
+                                            </span>
+                                        }
                                     </th>
                                 ))}
                             </tr>
                         ))}
                     </thead>
                     <tbody {...getTableBodyProps()}>
-                        {rows.map(row => {
+                        {page.map(row => {
                             prepareRow(row);
                             return (
                                 <tr {...row.getRowProps()}>

@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react'
+import React, { ReactElement, useCallback, useState } from 'react'
 import AdminSidebar from '../components/AdminSidebar'
 import { Column } from 'react-table';
 import { Link } from 'react-router-dom';
@@ -56,23 +56,234 @@ const arr: Array<DataType> = [
     stock: 213,
     action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
   },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
+
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
+  {
+    photo: <img src={img} alt="Shoes" />,
+    name: "Puma Shoes Air Jordan Cook Nigga 2023",
+    price: 690,
+    stock: 3,
+    action: <Link to="/admin/product/sajknaskd">Manage</Link>,
+  },
+  {
+    photo: <img src={img2} alt="Shoes" />,
+    name: "Macbook",
+    price: 232223,
+    stock: 213,
+    action: <Link to="/admin/product/sdaskdnkasjdn">Manage</Link>,
+  },
 ]
 
 const Products = () => {
-  const [rows, setRows] = useState<DataType[]>(arr);
+  const [data] = useState<DataType[]>(arr);
 
-  const Table = TableHOC<DataType>(
-    columns,
-    rows,
-    "dashboard-product-box",
-    "Products",
-    rows.length > 6
-  )();
+  const Table = useCallback(
+    TableHOC<DataType>(
+      columns,
+      data,
+      "dashboard-product-box",
+      "Products",
+    ), [])
 
   return (
     <div className='adminContainer'>
       <AdminSidebar />
-      <main>{Table}</main>
+      <main>{Table()}</main>
       <Link to='/admin/product/new' className='create-product-btn'>
         <FaPlus />
       </Link>
