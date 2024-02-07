@@ -21,3 +21,7 @@
 
 ## Chart
 `npm install --save chart.js react-chartjs-2`
+
+## React table
+`npm i react-table`
+`npm i --save-dev @types/react-table`
